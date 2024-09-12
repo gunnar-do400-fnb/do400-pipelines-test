@@ -16,6 +16,7 @@ pipeline {
             }
         }
         stage('Matrix Demo') {
+            matrix {
             axes {
                 axis {
                     name 'PLATFORM'
@@ -40,6 +41,7 @@ pipeline {
                         sh 'node ./frontend/test.js'
                     }
                 }
+            }
             }
         }
     }
