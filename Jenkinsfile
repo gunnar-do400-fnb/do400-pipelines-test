@@ -6,10 +6,14 @@ pipeline {
     }
     stages {
         stage('Backend Tests') {
-            sh 'node ./backend/test.js'
+            steps {
+                sh 'node ./backend/test.js'
+            }
         }
         stage('Frontend Tests') {
-            sh 'node ./frontend/test.js'
+            steps {
+                sh 'node ./frontend/test.js'
+            }
         }
     }
 }
